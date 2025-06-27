@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'testapache' }
+    agent any
 
     stages {
         stage("pull-scm") {
