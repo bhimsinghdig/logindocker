@@ -11,7 +11,7 @@ pipeline {
              steps {
 	            sh 'sudo mvn clean package'
 		    } 				   
-	
+	         }
 	stage("build-image") {
              steps {
 	           sh 'sudo docker build -t tomcat-repo:$BUILD_TAG .'
