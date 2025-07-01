@@ -18,5 +18,5 @@ pipeline {
                     sh 'sudo docker tag tomcat-repo:$BUILD_TAG bhimsinghdig/docklogin'
                     }
                  }
-	} 
+     } 
 }
