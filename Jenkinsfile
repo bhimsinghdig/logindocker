@@ -24,7 +24,7 @@ pipeline {
                     sh 'sudo docker login -u bhimsinghdig -p ${login_var}'
                     sh 'sudo docker push bhimsinghdig/docklogin:$BUILD_TAG'
                     }
-                 }
-            }
-      }
+                  }
+             }
+       }
 }
