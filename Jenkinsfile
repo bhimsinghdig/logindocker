@@ -15,14 +15,13 @@ pipeline {
 	stage("build-image") {
              steps {
 	            sh 'sudo docker build -t tomcat-repo:$BUILD_TAG .'
-                    sh 'sudo docker tag tomcat-repo:$BUILD_TAG bhimsinghdig/docklogin:i$BUILD_TAG '
+                    sh 'sudo docker tag tomcat-repo:$BUILD_TAG bhimsinghdig/docklogin:i$BUILD_TAG'
 		    } 				
-                }
-        stage("login_pass") {
+                 }
+        stage("dockerlogin") {
              steps {
-                    
                     withCredentials([string(credentialsId: 'login_pass', variable: 'login_var')]) {
-                    sh 'sudo docker login -u bhimsinghdig -p ${login_pass}'
+                    sh 'sudo docker login -u bhimsinghdig -p ${login_var}'
                     sh 'sudo docker push bhimsinghdig/docklogin:$BUILD_TAG'
                     }
                  }
