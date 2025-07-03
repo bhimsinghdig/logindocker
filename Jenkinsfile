@@ -15,7 +15,7 @@ pipeline {
 	stage("build-image") {
              steps {
 	            sh 'sudo docker build -t tomcat-repo:$BUILD_TAG .'
-                    sh 'sudo docker tag tomcat-repo:$BUILD_TAG bhimsinghdig/docklogin:$BUILD_TAG'
+                    sh 'sudo docker tag tomcat-repo:$BUILD_TAG bhimsinghdig/docklogin:i$BUILD_TAG'
 		    } 				
                  }
         stage("dockerlogin") {
