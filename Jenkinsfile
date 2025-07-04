@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage("pull-scm") {
-            steps {
+             steps {
                    git branch: 'main', url: 'https://github.com/bhimsinghdig/logindocker.git'
                    }
                }
@@ -26,5 +26,5 @@ pipeline {
                     }
                   }
              }
-       }
+        }
 }
