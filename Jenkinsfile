@@ -20,11 +20,11 @@ pipeline {
                  }
         stage("dockerlogin") {
              steps {
-                    withCredentials([string(credentialsId: 'login_pass', variable: 'log_var')]) {
-                    sh 'sudo docker login -u bhimsinghdig -p ${login_pass}'
-                    sh 'sudo docker push bhimsinghdig/docklogin:$BUILD_TAG'
+                    withCredentials([string(credentialsId: 'loginpass', variable: 'loginvar')]) {
+                    sh 'sudo docker login -u bhimsinghdig -p ${loginvar}'
+		    sh 'sudo docker push bhimsinghdig/docklogin:$BUILD_TAG'
                     }
-                  }
-             }
-        }
+                 }
+            }
+       }
 }
