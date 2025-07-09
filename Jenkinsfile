@@ -23,8 +23,14 @@ pipeline {
                     withCredentials([string(credentialsId: 'loginpass', variable: 'loginvar')]) {
                     sh 'sudo docker login -u bhimsinghdig -p ${loginvar}'
 		    sh 'sudo docker push bhimsinghdig/docklogin:$BUILD_TAG'
-                    }
+        stage("QAT Testing") {
+            steps {
+                   sh 'sudo docker rm -f $(sudo docker ps -a -q)'
+                   sh 'sudo docker run -dt --name web1 -p 8087:8080 bhimsinghdig/pipeline-java:$BUILD_TAG'           
+
+		   }
                  }
-            }
+              }
+	  }
        }
 }
