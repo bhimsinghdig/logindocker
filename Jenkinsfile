@@ -32,6 +32,6 @@ pipeline {
                    sh 'sudo docker run -dt --name web1 -p 8087:8080 bhimsinghdig/docklogin:$BUILD_TAG'
 
                    }
-               }
-       }
+                } 
+      }
 }
