@@ -28,10 +28,9 @@ pipeline {
 	   }
         stage("QAT") {
              steps {
-                   sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-                   sh 'sudo docker run -dt --name web1 -p 8087:8080 bhimsinghdig/docklogin:$BUILD_TAG'
-
-                   }
-                } 
-      }
+                    sh 'sudo docker rm -f $(sudo docker ps -a -q)'
+                    sh 'sudo docker run -dt --name web1 -p 8087:8080 bhimsinghdig/docklogin:$BUILD_TAG'
+                    }
+                 } 
+       }
 }
